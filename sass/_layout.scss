@@ -1,0 +1,43 @@
+@import "variables";
+
+*,
+*::after,
+*::before {
+  margin     : 0;
+  padding    : 0;
+  box-sizing : inherit;
+}
+
+html {
+  font-size : 62.5%;
+}
+
+body {
+  font-weight                 : 600;
+  overflow-x                  : hidden;
+  -webkit-font-smoothing      : antialiased;
+  -moz-osx-font-smoothing     : grayscale;
+  text-rendering              : optimizeLegibility;
+  -webkit-tap-highlight-color : transparent;
+  font-family                 : 'Barlow', sans-serif;
+  a {
+    font-family : 'Bebas Neue', cursive;
+  }
+}
+
+.layout {
+  height                : 100vh;
+  width                 : 100vw;
+  display               : grid;
+  grid-template-rows    : [nav-s] 46px [nav-e content-s] 1fr [content-e] 1fr;
+  grid-template-columns : [s] 1fr [e];
+
+  &__navbar {
+    grid-row    : nav-s/nav-e;
+    grid-column : s/e;
+  }
+
+  &__content {
+    grid-column : s/e;
+  }
+}
